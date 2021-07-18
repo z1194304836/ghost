@@ -1,0 +1,19 @@
+##分支循环##
+for i in range(a,b,c):  #从a到b步长为c
+#列表推导式#
+[i for i in list]
+#切割
+result = list.split("")
+#去前后空格strip()
+[list.strip() for list in result]
+#替换：replace
+str = ""
+str.replace("被替换","替换词")
+
+##文件读写##
+#open(文件路径,操作符,字符编码格式)
+#操作符：r w(清空写) a(追加写) rb(二进制写) wb ab
+#encoding值默认为"gbk"读取时编码要与源文件一致
+file = open("file.txt","r",encoding="")
+#read() 从头读到尾 readline() 每次读取一行，并且带有指针 readlines() 从头读到尾，返回类型为lisfile
+file.read()  file.readline()  file.readlines()
