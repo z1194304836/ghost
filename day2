@@ -14,6 +14,22 @@ str.replace("被替换","替换词")
 #open(文件路径,操作符,字符编码格式)
 #操作符：r w(清空写) a(追加写) rb(二进制写) wb ab
 #encoding值默认为"gbk"读取时编码要与源文件一致
+#———读取———#
 file = open("file.txt","r",encoding="")
 #read() 从头读到尾 readline() 每次读取一行，并且带有指针 readlines() 从头读到尾，返回类型为lisfile
 file.read()  file.readline()  file.readlines()
+file.close()
+#———写入———#
+file = open("file.txt","w",encoding="utf-8")
+file.write()
+file.close()
+#标准文件读写语法：with open("file.txt","w",encoding = "utf-8") as file:
+#二进制文件读写
+with open("file.txt","rb") as file:
+    #二进制
+    result = file.read() 
+    #decode:解码 将二进制转换为字符串
+    #encode:编码 将字符串转换为二进制
+    result.decode("gbk").encode("utf-8").decode("utf-8")
+
+##正则表达式##
