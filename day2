@@ -33,3 +33,19 @@ with open("file.txt","rb") as file:
     result.decode("gbk").encode("utf-8").decode("utf-8")
 
 ##正则表达式##
+#用来检索、替换那些符合某个模式的文本
+#1.[abc]  匹配a或者b或者c
+#  [a-z]  匹配所有小写字母
+#  [a-zA-Z]  匹配所有大写字母
+#  [0-9] = \d  匹配所有数字
+#  \D  匹配所有非数字
+#  abc   匹配abc
+import re
+#match:要求匹配的字符串首字符必须满足正则，否则返回None
+#group:从match 对象中提取内容
+result = re.match(r'[abc]',"abcd")
+result.group()
+#search:返回满足正则的第一个字符
+re.search(r'[abc]',"abcd")
+#findall:返回满足正则的所有结果，结果以list返回
+re.findal(r'[abc]',"abcd")
