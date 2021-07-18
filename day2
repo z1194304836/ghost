@@ -39,6 +39,10 @@ with open("file.txt","rb") as file:
 #  [a-zA-Z]  匹配所有大写字母
 #  [0-9] = \d  匹配所有数字
 #  \D  匹配所有非数字
+#  ^
+#  +  ==  {1，}
+#  *  ==  {0, }
+#  ?  ==  {0,1}
 #  abc   匹配abc
 import re
 #match:要求匹配的字符串首字符必须满足正则，否则返回None
@@ -49,3 +53,8 @@ result.group()
 re.search(r'[abc]',"abcd")
 #findall:返回满足正则的所有结果，结果以list返回
 re.findal(r'[abc]',"abcd")
+#{n}:匹配前面的字符数为n个 {m,n}:匹配前面字符数量为m到n个 {m,}  默认为贪婪模式（取最多次数）后面加？为非贪婪模式
+re.findall(r'[abc]{2}','abcabc')
+##练习 ：匹配手机号（11位数字，1开头 第二位：3，5,6,7,8,9 第三位到第九位：普通数字）
+   re.findall(r'^1[356789]\d{9}$',"")
+
